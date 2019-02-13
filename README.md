@@ -1,4 +1,4 @@
-# GAS
+# GAS Starter Template
 
 ## Setup
 
