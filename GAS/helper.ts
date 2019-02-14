@@ -2,7 +2,7 @@
 // Types & Objects
 // --------------------
 
-/** Example for type of data */
+/** Example for type of data to manipulate */
 interface ExampleData {
   name: string;
   age: number;
@@ -65,8 +65,8 @@ const SheetsHelper = {
 
   /** Get list of all sheet names */
   getSheetNames: function(): string[] {
-    var sheetNames = [];
-    var sheets = SpreadsheetApp.getActive().getSheets();
+    let sheetNames = [];
+    let sheets = SpreadsheetApp.getActive().getSheets();
     sheets.forEach(function(sheet) {
       sheetNames.push(sheet.getName());
     });
@@ -75,31 +75,24 @@ const SheetsHelper = {
 
   /** Write the data object to the next row in sheet */
   writeData: function(sheet: Sheet, data: ExampleData) {
-    var nextRow = sheet.getDataRange().getHeight() + 1;
-    var fillData = [data.age, data.name, data.role];
-    var range = sheet.getRange(nextRow, 1, 1, fillData.length);
+    let nextRow = sheet.getDataRange().getHeight() + 1;
+    let fillData = [data.age, data.name, data.role];
+    let range = sheet.getRange(nextRow, 1, 1, fillData.length);
     range.setValues([fillData]);
   },
 
-  /** Convert spreadsheet data (array of arrays) into object of objects {}{} */
-  parseSpreadsheetData: function(data: Object[][], key: string) {
+  /** Convert spreadsheet data (array of arrays) into array of objects []{} */
+  parseSpreadsheetData: function(data: any[][]): object[] {
     // Take first row as headers
-    var headers = <string[]>data.shift();
+    let headers = <string[]>data.shift();
     // convert [][] -> []{}  (headers as key)
-    var dataList = data.map(function(row) {
+    return data.map(function(row) {
       let res = {};
       for (let i = 0; i < headers.length; i++) {
         res[headers[i]] = row[i];
       }
       return res;
     });
-    // convert []{} -> {}{}  (given key as key)
-    var dataObj = {};
-    dataList.forEach(function(row) {
-      var k = row[key];
-      dataObj[k] = row;
-    });
-    return dataObj;
   },
 
   /** Create PDF Blob for given Google Sheet */
