@@ -118,10 +118,7 @@ const SheetsHelper = {
     let response = UrlFetchApp.fetch(url + url_ext + sheetId, {
       headers: { Authorization: "Bearer " + token }
     });
-    if (addDateToName) {
-      let today = getTodayString();
-      pdfName = `${pdfName} - ${today}`;
-    }
+    if (addDateToName) pdfName = `${pdfName} - ${getTodayString()}`;
     return response.getBlob().setName(pdfName + ".pdf");
   }
 };
