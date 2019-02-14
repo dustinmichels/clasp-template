@@ -1,5 +1,7 @@
 # GAS Starter Template
 
+Starter template for Google Apps Script projects using clasp.
+
 ## Setup
 
 ```bash
@@ -10,4 +12,4 @@ npm install -g @google/clasp
 npm i -S @types/google-apps-script
 ```
 
-Update `scriptId` in .clasp.json
+Update `scriptId` in `.clasp.json`
