@@ -7,7 +7,8 @@ Includes some helper functions and polyfills that I frequently use.
 ## Setup
 
 ```bash
-# Make sure clasp is installed locally
+# Make sure clasp & typescript are installed globally
+npm install -g typescript
 npm install -g @google/clasp
 
 # install GAS types locally
