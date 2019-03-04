@@ -1,5 +1,10 @@
+// -------------------------
+// STRINGS
+// -------------------------
+
 /**
  * Add "includes" method to strings
+ * From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
  */
 if (!String.prototype.includes) {
   Object.defineProperty(String.prototype, "includes", {
@@ -16,6 +21,36 @@ if (!String.prototype.includes) {
     }
   });
 }
+
+/**
+ * Add "startsWith" method to strings
+ * From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith
+ */
+if (!String.prototype.startsWith) {
+  Object.defineProperty(String.prototype, "startsWith", {
+    value: function(search, pos) {
+      pos = !pos || pos < 0 ? 0 : +pos;
+      return this.substring(pos, pos + search.length) === search;
+    }
+  });
+}
+
+/**
+ * Add "endsWith" method to strings
+ * From: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/endsWith
+ */
+if (!String.prototype.endsWith) {
+  String.prototype.endsWith = function(search, this_len) {
+    if (this_len === undefined || this_len > this.length) {
+      this_len = this.length;
+    }
+    return this.substring(this_len - search.length, this_len) === search;
+  };
+}
+
+// -------------------------
+// ARRAYS
+// -------------------------
 
 /**
  * Adds "includes" method to arrays
