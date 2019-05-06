@@ -141,6 +141,6 @@ const GmailHelper = {
 /** Evalulate HTML email template with data */
 function _getHtmlBody(pdfLink: string) {
   let t = HtmlService.createTemplateFromFile("email");
-  t.pdfLink = pdfLink;
+  t["pdfLink"] = pdfLink;
   return t.evaluate().getContent();
 }

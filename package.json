@@ -1,0 +1,22 @@
+{
+  "name": "clasp-template",
+  "version": "1.0.0",
+  "description": "Starter template for Google Apps Script projects using clasp.",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dustinmichels/clasp-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dustinmichels/clasp-template/issues"
+  },
+  "homepage": "https://github.com/dustinmichels/clasp-template#readme"
+}

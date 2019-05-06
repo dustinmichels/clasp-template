@@ -1,4 +1,4 @@
-# GAS Starter Template
+# Clasp Starter Template
 
 Starter template for Google Apps Script projects using clasp.
 
