@@ -1,6 +1,6 @@
 # Clasp Starter Template
 
-Starter template for Google Apps Script projects using clasp.
+Starter template for [Google Apps Script](https://developers.google.com/apps-script/) projects using [clasp](https://github.com/google/clasp).
 
 Includes some helper functions and polyfills that I frequently use.
 
