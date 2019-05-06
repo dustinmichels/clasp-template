@@ -1,7 +1,4 @@
-type Sheet = GoogleAppsScript.Spreadsheet.Sheet;
-type SS = GoogleAppsScript.Spreadsheet.Spreadsheet;
-type GFile = GoogleAppsScript.Drive.File;
-type GBlob = GoogleAppsScript.Base.Blob;
+/// <reference path="Code.d.ts" />
 
 function main() {
   Logger.log("Main function");
