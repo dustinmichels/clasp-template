@@ -12,7 +12,8 @@
     "eslint": "^8.0.1"
   },
   "scripts": {
-    "lint": "eslint . --ext .ts",
+    "lint": "eslint GAS/ --ext .ts",
+    "lintfix": "eslint GAS/ --ext .ts --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

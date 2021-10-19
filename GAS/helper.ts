@@ -34,7 +34,7 @@ function getTodayString(): string {
 }
 
 // --------------------
-// Drive
+// Google Drive
 // --------------------
 
 const DriveHelper = {
@@ -65,12 +65,8 @@ const SheetsHelper = {
 
   /** Get list of all sheet names */
   getSheetNames: function (): string[] {
-    const sheetNames = [];
     const sheets = SpreadsheetApp.getActive().getSheets();
-    sheets.forEach(function (sheet) {
-      sheetNames.push(sheet.getName());
-    });
-    return sheetNames;
+    return sheets.map((sheet) => sheet.getName());
   },
 
   /** Write the data object to the next row in sheet */
@@ -86,7 +82,7 @@ const SheetsHelper = {
     // Take first row as headers
     const headers = <string[]>data.shift();
     // convert [][] -> []{}  (headers as key)
-    return data.map(function (row) {
+    return data.map((row) => {
       const res = {};
       for (let i = 0; i < headers.length; i++) {
         res[headers[i]] = row[i];
@@ -139,7 +135,7 @@ const GmailHelper = {
 };
 
 /** Evalulate HTML email template with data */
-function _getHtmlBody(pdfLink: string) {
+function _getHtmlBody(pdfLink: string): string {
   const t = HtmlService.createTemplateFromFile("email");
   t["pdfLink"] = pdfLink;
   return t.evaluate().getContent();
