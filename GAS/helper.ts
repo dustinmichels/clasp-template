@@ -77,8 +77,8 @@ const SheetsHelper = {
     range.setValues([fillData]);
   },
 
-  /** Convert spreadsheet data (array of arrays) into array of objects []{} */
-  parseSpreadsheetData: function (data: any[][]): object[] {
+  /** Convert spreadsheet data (array of arrays) into array of objects. */
+  parseSpreadsheetData: function (data: string[][]): object[] {
     // Take first row as headers
     const headers = <string[]>data.shift();
     // convert [][] -> []{}  (headers as key)
