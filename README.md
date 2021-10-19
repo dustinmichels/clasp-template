@@ -12,6 +12,8 @@ npm install -g typescript
 npm install -g @google/clasp
 
 # install GAS types locally
+npm install
+# (or from scatch)
 npm i -S @types/google-apps-script
 ```
 
