@@ -35,7 +35,28 @@ npm install -g @google/clasp
 npm i -S @types/google-apps-script
 ```
 
-### 4) Setup Clasp
+For [linting](https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/):
+
+```sh
+# linter
+npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-tsdoc
+```
+
+### 4) Add lint script
+
+In package.json, add:
+
+```json
+{
+  "scripts": {
+    ...
+    "lint": "eslint . --ext .ts",
+    "lintfix": "eslint . --ext .ts --fix",
+  }
+}
+```
+
+### 5) Setup Clasp
 
 - `clasp login`
 - Update `scriptId` in `.clasp.json` with an existing google script
