@@ -2,25 +2,40 @@
 
 Starter template for [Google Apps Script](https://developers.google.com/apps-script/) projects using [clasp](https://github.com/google/clasp).
 
-Includes some helper functions and polyfills that I frequently use.
+Includes some helper functions for potential tasks.
 
 ## Setup
 
-```bash
+### 1) Clone Repo
+
+```sh
+https://github.com/dustinmichels/GAS-snippets.git
+```
+
+### 2) Init new project
+
+```sh
+# reset Git project
+rm -rf .git
+git init
+
+# reset package.json
+rm package.json package-lock.json
+npm init -y
+```
+
+### 3) Install pacakges
+
+```sh
 # Make sure clasp & typescript are installed globally
 npm install -g typescript
 npm install -g @google/clasp
 
 # install GAS types locally
-npm install
-# (or from scatch)
 npm i -S @types/google-apps-script
 ```
 
-Update `scriptId` in `.clasp.json`
+### 4) Setup Clasp
 
-## Push
-
-```bash
-clasp push
-```
+- `clasp login`
+- Update `scriptId` in `.clasp.json` with an existing google script
