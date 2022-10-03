@@ -24,7 +24,7 @@ rm package.json package-lock.json
 npm init -y
 ```
 
-### 3) Install pacakges
+### 3) Install packages
 
 ```sh
 # Make sure clasp & typescript are installed globally
@@ -35,28 +35,13 @@ npm install -g @google/clasp
 npm i -S @types/google-apps-script
 ```
 
-For [linting](https://khalilstemmler.com/blogs/typescript/eslint-for-typescript/):
+For linting:
 
 ```sh
-# linter
-npm install --save-dev eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-tsdoc
+npm i --save-dev prettier @trivago/prettier-plugin-sort-imports
 ```
 
-### 4) Add lint script
-
-In package.json, add:
-
-```json
-{
-  "scripts": {
-    ...
-    "lint": "eslint . --ext .ts",
-    "lintfix": "eslint . --ext .ts --fix",
-  }
-}
-```
-
-### 5) Setup Clasp
+### 4) Setup Clasp
 
 - `clasp login`
 - Update `scriptId` in `.clasp.json` with an existing google script
