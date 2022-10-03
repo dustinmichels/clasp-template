@@ -8,10 +8,6 @@ Includes some helper functions for potential tasks.
 
 ### 1) Clone Repo
 
-```sh
-https://github.com/dustinmichels/GAS-snippets.git
-```
-
 ### 2) Init new project
 
 ```sh
